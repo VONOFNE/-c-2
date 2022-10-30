@@ -106,3 +106,29 @@
 //     }
 //     return 0;
 // }
+
+/*使用getchar清理缓冲区的应用*/
+// int main ()
+// {
+//     int password[20] = { 0 };
+//     printf("请输入密码：");
+//     scanf("%s", password);
+//     printf("请确认密码Y/N:>");
+//     int tmp  = 0;
+//     while ((tmp = getchar()) != '\n')
+//     {
+//         ;//清理缓冲区
+//     }
+//     int i = getchar();
+//     if(i == 'Y')
+//     {
+//         printf("确认正确");
+//     }
+//     else
+//     {
+//         printf("确认失败");
+//     }
+//     return 0;
+// }
+
+/**/
