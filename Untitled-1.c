@@ -81,17 +81,28 @@
 // }
 
 /*while循环语句中break与continue的作用*/
-int main ()
-{
-    int a = 1;
-    while(a <= 10)
-    {
-        if (5 == a)
-        {
-            continue;
-        }
-        printf("%d,",a);   
-        a++;
-    }
-    return 0;
-}
+// int main ()
+// {
+//     int a = 1;
+//     while(a <= 10)
+//     {
+//         if (5 == a)
+//         {
+//             continue;
+//         }
+//         printf("%d,",a);   
+//         a++;
+//     }
+//     return 0;
+// }
+
+/*getchar与putchar的应用*/
+// int main ()
+// {
+//     int ch = 0;
+//     while ((ch = getchar()) != EOF)
+//     {
+//         putchar(ch);
+//     }
+//     return 0;
+// }
