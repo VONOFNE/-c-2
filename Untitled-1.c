@@ -142,3 +142,48 @@
 //     return 0;
 // }
 
+/*初识dowhile循环*/
+// int main ()
+// {
+//     int i = 0;
+//     do
+//     {
+//         printf("%d,",i);
+//         i++;
+//     } while (i <= 10);
+//     return 0;
+// }
+
+/*n的阶乘*/
+// int main ()
+// {
+//     int n = 0;
+//     int i = 0;
+//     int result = 1;
+//     int sum = 0;
+//     scanf("%d", &n);
+//     while(i < n)
+//     {
+//         i++;
+//         result = result * i;
+//         sum += result;
+//     } 
+//     printf("%d,%d", result,sum);
+//     return 0;
+// }
+
+/*1!+2!+...+10!*/
+// int main ()
+// {
+//     int a = 1;
+//     int n = 10;
+//     int ret = 1;
+//     int sum = 0;
+//     for(a = 1; a <= n; a++)
+//     {
+//         ret *= a;
+//         sum += ret;
+//     }
+//     printf("%d",sum);
+//     return 0;
+// }
