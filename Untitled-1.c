@@ -187,3 +187,36 @@
 //     printf("%d",sum);
 //     return 0;
 // }
+
+/*有序数组中选出具体的某个数n*/
+int main ()
+{
+    int arr[] = {1,2,3,4,5,6,7,8,9,10};
+    int k = 7;
+    int i = sizeof(arr)/sizeof(int);
+    int left = 0;
+    int right = i - 1;
+    while (left <= right)
+    {
+        int mid = (left + right )/2;
+        if (arr[mid] < k)
+        {
+            left = mid + 1;
+        }
+        else if (arr[mid] > k)
+        {
+            right  = mid  - 1;
+        }
+        else 
+        {
+            printf("找到了下标为：%d",mid);
+            break;
+        }
+        
+    }
+    if (left > right)
+    {
+        printf("找不到");
+    }
+    return 0;
+}
