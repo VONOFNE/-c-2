@@ -1,4 +1,6 @@
  #include<stdio.h>
+ #include<string.h>
+ #include<windows.h>
  /*比大小作业*/
 // int main(){
 //     int a,b;
@@ -188,35 +190,86 @@
 //     return 0;
 // }
 
-/*有序数组中选出具体的某个数n*/
+/*有序数组中选出具体的某个数n的下标*/
+// int main ()
+// {
+//     int arr[] = {1,2,3,4,5,6,7,8,9,10};
+//     int k = 8;
+//     int i = sizeof(arr)/sizeof(int);
+//     int left = 0;
+//     int right = i - 1;
+//     while (left <= right)
+//     {
+//         int mid = (left + right )/2;
+//         if (arr[mid] < k)
+//         {
+//             left = mid + 1;//+1/-1会使循环次数减少，效率变高
+//         }
+//         else if (arr[mid] > k)
+//         {
+//             right  = mid - 1;
+//         }
+//         else 
+//         {
+//             printf("找到了下标为：%d",mid);
+//             break;
+//         }
+//     }
+//     if (left > right)
+//     {
+//         printf("找不到");
+//     }
+//     return 0;
+// }
+
+/*两边向中间聚集的效果*/
+// int main ()
+// {
+//     char arr1[] = "welcome to it!!!!!";
+//     char arr2[] = "##################";
+//     int left = 0;
+//     int right = strlen(arr1) -1;
+//     while(left<=right)
+//     {
+//     arr2[left] = arr1[left];
+//     arr2[right] = arr1[right];
+//     printf("%s\n",arr2);
+//     Sleep(1000);//睡眠1秒
+//     system("cls");//清空屏幕
+//     left++;
+//     right--;
+//     }
+//     printf("%s",arr2);
+//     // printf("%d",strlen(arr1));
+//     return 0;
+// }
+
+/*用户输入密码三次失败，则无法登录*/
 int main ()
 {
-    int arr[] = {1,2,3,4,5,6,7,8,9,10};
-    int k = 7;
-    int i = sizeof(arr)/sizeof(int);
-    int left = 0;
-    int right = i - 1;
-    while (left <= right)
+    char arr1[20] = { 0 };
+    int i = 0;
+    for(i = 0 ; i<3 ; i++)
     {
-        int mid = (left + right )/2;
-        if (arr[mid] < k)
+        printf("请输入密码：");
+        scanf("%s",arr1);
+        if(strcmp(arr1,"123456") == 0)
         {
-            left = mid + 1;
+            printf("正确");
+            i = 0;//防止在第三次输入正确后显示“已锁定”
+            break;//结束循环
         }
-        else if (arr[mid] > k)
+        else
         {
-            right  = mid  - 1;
+            printf("错误，请重新输入");
+            Sleep(1000);
+            system("cls");
         }
-        else 
-        {
-            printf("找到了下标为：%d",mid);
-            break;
-        }
-        
     }
-    if (left > right)
+    if(i == 3)
     {
-        printf("找不到");
+        printf("已锁定");
     }
+
     return 0;
 }
