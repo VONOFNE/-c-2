@@ -1,6 +1,7 @@
  #include<stdio.h>
  #include<string.h>
  #include<windows.h>
+ #include<stdlib.h>
  /*比大小作业*/
 // int main(){
 //     int a,b;
@@ -245,31 +246,65 @@
 // }
 
 /*用户输入密码三次失败，则无法登录*/
-int main ()
-{
-    char arr1[20] = { 0 };
-    int i = 0;
-    for(i = 0 ; i<3 ; i++)
-    {
-        printf("请输入密码：");
-        scanf("%s",arr1);
-        if(strcmp(arr1,"123456") == 0)
-        {
-            printf("正确");
-            i = 0;//防止在第三次输入正确后显示“已锁定”
-            break;//结束循环
-        }
-        else
-        {
-            printf("错误，请重新输入");
-            Sleep(1000);
-            system("cls");
-        }
-    }
-    if(i == 3)
-    {
-        printf("已锁定");
-    }
+// int main ()
+// {
+//     char arr1[20] = { 0 };
+//     int i = 0;
+//     for(i = 0 ; i<3 ; i++)
+//     {
+//         printf("请输入密码：");
+//         scanf("%s",arr1);//arr1前不加&的原因是数组名本身就是个地址，无需取地址
+//         if(strcmp(arr1,"123456") == 0)
+//         {
+//             printf("正确");
+//             i = 0;//防止在第三次输入正确后显示“已锁定”
+//             break;//结束循环
+//         }
+//         else
+//         {
+//             printf("错误，请重新输入");
+//             Sleep(1000);
+//             system("cls");
+//         }
+//     }
+//     if(i == 3)
+//     {
+//         printf("已锁定");
+//     }
+//     return 0;
+// }
 
+/*猜数字游戏*/
+//1.自动生成一个1~100的随机数
+//2.猜数字
+//a.猜对了——“恭喜你游戏结束”
+//b.猜错了——会告诉你猜大了，还是猜小了，继续猜，到对为止。
+//c.游戏可以一直玩，除非退出游戏
+int main()
+{
+    int i = 0;
+    int input = 0;
+    srand((unsigned int)time(NULL));
+    for(;i == 0;){
+    int asr = rand()%100 + 1;//将范围控制1~100
+    printf("%d\n",asr);
+    printf("Please guess what I am:");
+    scanf("%d",&input);
+    while(input != asr)
+    {
+        if(input < asr){
+            printf("Your answer is samller than the right answer,try again.\n");
+        }
+        else{ 
+            printf("Your answer is bigger than the right answer,try again.\n");
+        }
+        printf("Please guess again:");
+        scanf("%d",&input);
+    }
+    if(input == asr)
+    {
+            printf("Congratulation!You're right!\n");
+    }
+    }
     return 0;
 }
