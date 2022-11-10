@@ -2,6 +2,7 @@
  #include<string.h>
  #include<windows.h>
  #include<stdlib.h>
+ #include<time.h>
  /*比大小作业*/
 // int main(){
 //     int a,b;
@@ -337,18 +338,37 @@
 // }
 
 /*辗转相除法求最大公约数*/
-int main ()
-{
-    int m =0;
-    int n =0;
-    scanf("%d%d",&m,&n);
-    int t =0;
-    while(m%n)
-    {
-        t = m%n;
-        m = n;
-        n = t;
-    }
-    printf("最大公约数是：%d",t);
-    return 0;
-}
+// int main ()
+// {
+//     int m =0;
+//     int n =0;
+//     scanf("%d%d",&m,&n);
+//     int t =0;
+//     while(m%n)
+//     {
+//         t = m%n;
+//         m = n;
+//         n = t;
+//     }
+//     printf("最大公约数是：%d",t);
+//     return 0;
+// }
+
+/*打印1000~2000的闰年*/
+//1，闰年能被四整除，不能被100整除
+//2，能被400整除
+// int main ()
+// {
+//     int y = 0;
+//     int count = 0;
+//     for(y = 1000;y <= 2000;y++)
+//     {
+//         if(((y%4 == 0) && (y%100 != 0))||(y%400 == 0))
+//         {
+//             printf("%d ",y);
+//             count++;
+//         }
+//     }
+//     printf("有%d个闰年",count);
+//     return 0;
+// }
