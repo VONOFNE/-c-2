@@ -335,3 +335,20 @@
 //     printf("%d,%d,%d",a,b,c);
 //     return 0;
 // }
+
+/*辗转相除法求最大公约数*/
+int main ()
+{
+    int m =0;
+    int n =0;
+    scanf("%d%d",&m,&n);
+    int t =0;
+    while(m%n)
+    {
+        t = m%n;
+        m = n;
+        n = t;
+    }
+    printf("最大公约数是：%d",t);
+    return 0;
+}
