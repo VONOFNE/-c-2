@@ -280,31 +280,58 @@
 //a.猜对了——“恭喜你游戏结束”
 //b.猜错了——会告诉你猜大了，还是猜小了，继续猜，到对为止。
 //c.游戏可以一直玩，除非退出游戏
-int main()
-{
-    int i = 0;
-    int input = 0;
-    srand((unsigned int)time(NULL));
-    for(;i == 0;){
-    int asr = rand()%100 + 1;//将范围控制1~100
-    printf("%d\n",asr);
-    printf("Please guess what I am:");
-    scanf("%d",&input);
-    while(input != asr)
-    {
-        if(input < asr){
-            printf("Your answer is samller than the right answer,try again.\n");
-        }
-        else{ 
-            printf("Your answer is bigger than the right answer,try again.\n");
-        }
-        printf("Please guess again:");
-        scanf("%d",&input);
-    }
-    if(input == asr)
-    {
-            printf("Congratulation!You're right!\n");
-    }
-    }
-    return 0;
-}
+// int main()
+// {
+//     int i = 0;
+//     int input = 0;
+//     srand((unsigned int)time(NULL));//前置于rand，使rand产生的值真正随机
+//     for(;i == 0;){
+//     int asr = rand()%100 + 1;//将范围控制1~100
+//     printf("%d\n",asr);
+//     printf("Please guess what I am:");
+//     scanf("%d",&input);
+//     while(input != asr)
+//     {
+//         if(input < asr){
+//             printf("Your answer is samller than the right answer,try again.\n");
+//         }
+//         else{ 
+//             printf("Your answer is bigger than the right answer,try again.\n");
+//         }
+//         printf("Please guess again:");
+//         scanf("%d",&input);
+//     }
+//     if(input == asr)
+//     {
+//             printf("Congratulation!You're right!\n");
+//     }
+//     }
+//     return 0;
+// }
+
+/*让输入的数字按从小到大的顺序输出*/
+// int main ()
+// {
+//     int a,b,c;
+//     scanf("%d%d%d",&a,&b,&c);
+//     if(a > b)
+//     {
+//         int tmp = a;
+//         a = b;
+//         b = tmp;
+//     }
+//     if(a > c)
+//     {
+//         int tmp = a;
+//         a = c;
+//         c = tmp;
+//     }
+//     if(b > c)
+//     {
+//         int tmp = b;
+//         b = c;
+//         c = tmp;
+//     }
+//     printf("%d,%d,%d",a,b,c);
+//     return 0;
+// }
