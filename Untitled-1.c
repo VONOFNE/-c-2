@@ -372,3 +372,31 @@
 //     printf("有%d个闰年",count);
 //     return 0;
 // }
+
+/*打印100~200之间的素数*/
+int main ()
+{
+    int i = 0;
+    for(i = 100;i <= 200;i++)
+    {
+        //判断i是否为素数
+        //2——i-1之间的数字去试除
+        int n = 2;
+        while(n < i)
+        {
+            int m = 0;
+            m = i % n;
+            if(m == 0)
+            {
+                break;
+            }
+            if(m == 1)
+            {
+                printf("%d ",i);
+                break;
+            }
+            n++;
+        }
+    } 
+    return 0;
+}
