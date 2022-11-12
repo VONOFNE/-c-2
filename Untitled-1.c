@@ -381,8 +381,9 @@ int main ()
     {
         //判断i是否为素数
         //2——i-1之间的数字去试除
+        //优化：if i = a*b,a or b must <= i的开方
         int n = 2;
-        while(n < i)
+        while(n < sqrt(i))
         {
             int m = 0;
             m = i % n;
