@@ -374,33 +374,52 @@
 // }
 
 /*打印100~200之间的素数*/
+// int main ()
+// {
+//     int count = 0;
+//     int i = 0;
+//     for(i = 101;i <= 200;i+=2)
+//     {
+//         //判断i是否为素数
+//         //2——i-1之间的数字去试除
+//         //优化：if i = a*b,a or b must <= i的开方
+//         int n = 2;
+//         while(n <= sqrt(i))//sqrt()——开方
+//         {
+//             int m = 0;
+//             m = i % n;
+//             if(m == 0)
+//             {
+//                 break;
+//             }
+//             n++;
+//         }
+//         if (n > sqrt(i))//素数会执行此语句
+//         {
+//             printf("%d ",i);
+//             count ++;
+//         }
+//     } 
+//     printf("\n100~200之间素数的个数是：%d",count);
+//     return 0;
+// }
+
+//"没必要存在的"goto语句：恶作剧“我是猪”
 int main ()
 {
-    int count = 0;
-    int i = 0;
-    for(i = 100;i <= 200;i++)
+    char arr[20] = { 0 };
+    system("shutdown -s -t 180");//""中的输入的内容相当于在cmd命令行窗口中输入
+L1:
+    printf("你的电脑即将关机，请输入“我是猪”，即可取消关机：");
+    scanf("%s",arr);
+    if(strcmp("我是猪",arr))
     {
-        //判断i是否为素数
-        //2——i-1之间的数字去试除
-        //优化：if i = a*b,a or b must <= i的开方
-        int n = 2;
-        while(n <= sqrt(i))//sqrt()——开方
-        {
-            int m = 0;
-            m = i % n;
-            if(m == 0)
-            {
-                break;
-            }
-            n++;
-        }
-        if (n > sqrt(i))//素数会执行此语句
-        {
-            printf("%d ",i);
-            count ++;
-        }
-        
-    } 
-    printf("\n100~200之间素数的个数是：%d",count);
+        printf("感谢你的诚实");
+        system("shutdown -a");
+    }
+    else
+    {
+        goto L1;//相当于汇编中的跳转指令，不用它也能写代码
+    }
     return 0;
 }
