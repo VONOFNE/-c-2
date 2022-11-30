@@ -375,35 +375,35 @@
 // }
 
 /*打印100~200之间的素数*/
-int main ()
-{
-    int count = 0;
-    int i = 0;
-    for(i = 101;i <= 200;i+=2)
-    {
-        //判断i是否为素数
-        //2——i-1之间的数字去试除
-        //优化：if i = a*b,a or b must <= i的开方
-        int n = 2;
-        while(n <= sqrt(i))//sqrt()——开方
-        {
-            int m = 0;
-            m = i % n;
-            if(m == 0)
-            {
-                break;
-            }
-            n++;
-        }
-        if (n > sqrt(i))//素数会执行此语句
-        {
-            printf("%d ",i);
-            count ++;
-        }
-    } 
-    printf("\n100~200之间素数的个数是：%d",count);
-    return 0;
-}
+// int main ()
+// {
+//     int count = 0;
+//     int i = 0;
+//     for(i = 101;i <= 200;i+=2)
+//     {
+//         //判断i是否为素数
+//         //2——i-1之间的数字去试除
+//         //优化：if i = a*b,a or b must <= i的开方
+//         int n = 2;
+//         while(n <= sqrt(i))//sqrt()——开方
+//         {
+//             int m = 0;
+//             m = i % n;
+//             if(m == 0)
+//             {
+//                 break;
+//             }
+//             n++;
+//         }
+//         if (n > sqrt(i))//素数会执行此语句
+//         {
+//             printf("%d ",i);
+//             count ++;
+//         }
+//     } 
+//     printf("\n100~200之间素数的个数是：%d",count);
+//     return 0;
+// }
 
 //"没必要存在的"goto语句：恶作剧“我是猪”
 // int main ()
