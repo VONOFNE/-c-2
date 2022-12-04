@@ -34,14 +34,33 @@ int is_leapyear(int x)
     return ((x % 4 == 0 && x%100 == 0) || (x %400 == 0));
 }
 
+/*二分查找*/
+int binary_search(int a[],int k,int s)
+{
+    int left = 0;
+    int right = s - 1;
+    while(left <= right)
+    {
+        int mid = (left + right)/2;
+        if(a[mid] < k)
+        {
+            left = mid + 1;   
+        }
+        else if(a[mid] > k)
+        {
+            right = mid - 1;
+        }
+        else
+        {
+            return mid;
+        }
+    }
+}
+
  int main ()
  {
-    int i = 0;
-    printf("Please input the year you want to test:");
-    scanf("%d",&i);
-    if(is_leapyear(i) == 1)
-    printf("yes,it's.");
-    else
-    printf("No,it's not");
+    int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+    int key = 7;
+    printf("subscript is %d",binary_search(arr,key,sizeof(arr)/sizeof(arr[0])));
     return 0;
  }
