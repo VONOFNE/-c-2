@@ -55,12 +55,21 @@ int binary_search(int a[],int k,int s)
             return mid;
         }
     }
+    return -1;
 }
 
  int main ()
  {
     int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
     int key = 7;
-    printf("subscript is %d",binary_search(arr,key,sizeof(arr)/sizeof(arr[0])));
+    int ret = binary_search(arr,key,sizeof(arr)/sizeof(arr[0]));
+    if(ret == -1)
+    {
+        printf("can't find");
+    }
+    else
+    {
+        printf("subscript is %d",ret);
+    }
     return 0;
  }
