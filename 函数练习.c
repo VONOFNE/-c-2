@@ -35,41 +35,56 @@ int is_leapyear(int x)
 }
 
 /*二分查找*/
-int binary_search(int a[],int k,int s)
-{
-    int left = 0;
-    int right = s - 1;
-    while(left <= right)
-    {
-        int mid = (left + right)/2;
-        if(a[mid] < k)
-        {
-            left = mid + 1;   
-        }
-        else if(a[mid] > k)
-        {
-            right = mid - 1;
-        }
-        else
-        {
-            return mid;
-        }
-    }
-    return -1;
-}
+// int binary_search(int a[],int k,int s)
+// {
+//     int left = 0;
+//     int right = s - 1;
+//     while(left <= right)
+//     {
+//         int mid = (left + right)/2;
+//         if(a[mid] < k)
+//         {
+//             left = mid + 1;   
+//         }
+//         else if(a[mid] > k)
+//         {
+//             right = mid - 1;
+//         }
+//         else
+//         {
+//             return mid;
+//         }
+//     }
+//     return -1;
+// }
+//  int main ()
+//  {
+//     int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//     int key = 7;
+//     int ret = binary_search(arr,key,sizeof(arr)/sizeof(arr[0]));
+//     if(ret == -1)
+//     {
+//         printf("can't find");
+//     }
+//     else
+//     {
+//         printf("subscript is %d",ret);
+//     }
+//     return 0;
+//  }
 
- int main ()
- {
-    int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
-    int key = 7;
-    int ret = binary_search(arr,key,sizeof(arr)/sizeof(arr[0]));
-    if(ret == -1)
-    {
-        printf("can't find");
-    }
-    else
-    {
-        printf("subscript is %d",ret);
-    }
-    return 0;
- }
+/*调用一次，num+1*/
+void Add(int*p)
+{
+    (*p)++;
+}
+int main()
+{
+    int num = 0 ;
+    Add(&num);
+    printf("num = %d\n",num);
+    Add(&num);
+    printf("num = %d\n",num);
+    Add(&num);
+    printf("num = %d",num);
+}
