@@ -98,10 +98,29 @@ void print(unsigned int n)
     }
     printf("%d ",n % 10);
 }
+// int main()
+// {
+//     unsigned int n = 0 ;
+//     scanf("%d",&n);
+//     print(n);
+//     return 0 ; 
+// }
+
+/*函数递归2：不创建临时变量的情况下计算出字符串的长度*/
+int my_strlen(char* arr)
+{
+    if(*arr != '\0')
+    {
+        return 1 + my_strlen(arr + 1);//是递归逼近结束的条件
+    }
+    else//使递归结束的条件
+    {
+        return 0 ;
+    }
+}
 int main()
 {
-    unsigned int n = 0 ;
-    scanf("%d",&n);
-    print(n);
-    return 0 ; 
+    char arr[] = "hello world";
+    printf("%d",my_strlen(arr));//传去的是数组第一个元素的地址
+    return 0;
 }
