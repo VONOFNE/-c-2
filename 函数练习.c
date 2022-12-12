@@ -35,28 +35,28 @@ int is_leapyear(int x)
 }
 
 /*二分查找*/
-// int binary_search(int a[],int k,int s)
-// {
-//     int left = 0;
-//     int right = s - 1;
-//     while(left <= right)
-//     {
-//         int mid = (left + right)/2;
-//         if(a[mid] < k)
-//         {
-//             left = mid + 1;   
-//         }
-//         else if(a[mid] > k)
-//         {
-//             right = mid - 1;
-//         }
-//         else
-//         {
-//             return mid;
-//         }
-//     }
-//     return -1;
-// }
+int binary_search(int a[],int k,int s)
+{
+    int left = 0;
+    int right = s - 1;
+    while(left <= right)
+    {
+        int mid = (left + right)/2;
+        if(a[mid] < k)
+        {
+            left = mid + 1;   
+        }
+        else if(a[mid] > k)
+        {
+            right = mid - 1;
+        }
+        else
+        {
+            return mid;
+        }
+    }
+    return -1;
+}
 //  int main ()
 //  {
 //     int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
@@ -73,18 +73,35 @@ int is_leapyear(int x)
 //     return 0;
 //  }
 
-/*调用一次，num+1*/
+/*函数被调用一次，num+1*/
 void Add(int*p)
 {
     (*p)++;
 }
+// int main()
+// {
+//     int num = 0 ;
+//     Add(&num);
+//     printf("num = %d\n",num);
+//     Add(&num);
+//     printf("num = %d\n",num);
+//     Add(&num);
+//     printf("num = %d",num);
+// }
+
+/*初识函数递归：依次打印输入数字每一位上的数字*/
+void print(unsigned int n)
+{
+    if(n > 9)//使递归结束的条件
+    {
+        print(n / 10);//使递归逼近结束的条件
+    }
+    printf("%d ",n % 10);
+}
 int main()
 {
-    int num = 0 ;
-    Add(&num);
-    printf("num = %d\n",num);
-    Add(&num);
-    printf("num = %d\n",num);
-    Add(&num);
-    printf("num = %d",num);
+    unsigned int n = 0 ;
+    scanf("%d",&n);
+    print(n);
+    return 0 ; 
 }
