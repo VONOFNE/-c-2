@@ -147,8 +147,13 @@ int Fac(int n)
 // }
 
 /*用递归计算第n个斐波那契数*/
+int count = 0;
 int Fib(int n)
 {
+    if(n == 3)
+    {
+        count++;//统计第三个斐波那契数的计算次数
+    }
     if(n <= 2)
     {
         return 1;
@@ -158,10 +163,54 @@ int Fib(int n)
         return Fib(n-1) + Fib(n-2);
     }
 }
+// int main()
+// {
+//     int a = 0;
+//     scanf("%d",&a);
+//     printf("%d\n",Fib(a)); 
+//     printf("count = %d",count);//进行了大量重复的计算，效率太低
+//     return 0;
+// }
+
+/*用循环计算第n个斐波那契数*/
+int my_Fib(int n)
+{
+    if(n <= 2)
+    {
+        return 1;
+    }
+    else
+    {
+        int i = 0;
+        int ret = 1;
+        int a = 1;
+        for (i = 1; i < n; i++)
+        {
+            a = ret - a;//给a赋值前一个数的前一个数
+            ret = a + ret;//ret为前后一个数
+        }
+        return ret;
+    }
+}
+int teacher_Fib(int n)
+{
+    int a = 1;
+    int b = 1;
+    int c = 1;
+    while(n > 2)
+    {
+        c = a + b;
+        a = b;
+        b = c;
+        n--;
+    } 
+    return c;
+}
 int main()
 {
     int a = 0;
     scanf("%d",&a);
-    printf("%d",Fib(a)); 
+    printf("%d\n",teacher_Fib(a)); 
     return 0;
 }
+
