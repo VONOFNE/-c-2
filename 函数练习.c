@@ -112,15 +112,36 @@ int my_strlen(char* arr)
     if(*arr != '\0')
     {
         return 1 + my_strlen(arr + 1);//是递归逼近结束的条件
+        //不用++arr或arr++的原因是因为在arr传进去之后留下来的arr也会变
     }
     else//使递归结束的条件
     {
         return 0 ;
     }
 }
-int main()
+// int main()
+// {
+//     char arr[] = "hello world";
+//     printf("%d",my_strlen(arr));//传去的是数组第一个元素的地址
+//     return 0;
+// }
+
+/*用递归算n的阶乘*/
+int Fac(int n)
 {
-    char arr[] = "hello world";
-    printf("%d",my_strlen(arr));//传去的是数组第一个元素的地址
-    return 0;
+    if(n <= 1)
+    {
+        return 1;
+    }
+    else
+    {
+        return n * Fac(n - 1);
+    }
+}
+int main ()
+{
+    int n = 0;
+    scanf("%d",&n);
+    printf("%d",Fac(n));
+    return 0 ;
 }
