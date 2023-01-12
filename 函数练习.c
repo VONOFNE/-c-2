@@ -215,16 +215,33 @@ int teacher_Fib(int n)
 // }
 
 /*计算1/1-1/2+1/3-...-1/100*/
+// int main()
+// {
+//     int i  = 0;
+//     int flag = 1;
+//     double  sum = 0.0;
+//     for (i=0 ;i <= 100;i++)
+//     {
+//         sum += flag*1.0 / i;
+//         flag = -flag;
+//     }
+//     printf("%lf\n",sum);
+//     return 0;
+// }
+
+/*求十个整数中的是最大值*/
 int main()
 {
-    int i  = 0;
-    int flag = 1;
-    double  sum = 0.0;
-    for (i=0 ;i <= 100;i++)
+    int arr[10] = { -1,-2,-3,-4,-5,-6,-7,-8,-9,-10};
+    int max = arr[0];
+    int i = 0;
+    for(i=1;i<10;i++)
     {
-        sum += flag*1.0 / i;
-        flag = -flag;
+        if(arr[i]>max)
+        {
+            max = arr[i];
+        }
     }
-    printf("%lf\n",sum);
+    printf("%d",max);
     return 0;
 }
