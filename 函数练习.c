@@ -206,11 +206,25 @@ int teacher_Fib(int n)
     } 
     return c;
 }
+// int main()
+// {
+//     int a = 0;
+//     scanf("%d",&a);
+//     printf("%d\n",teacher_Fib(a)); 
+//     return 0;
+// }
+
+/*计算1/1-1/2+1/3-...-1/100*/
 int main()
 {
-    int a = 0;
-    scanf("%d",&a);
-    printf("%d\n",teacher_Fib(a)); 
+    int i  = 0;
+    int flag = 1;
+    double  sum = 0.0;
+    for (i=0 ;i <= 100;i++)
+    {
+        sum += flag*1.0 / i;
+        flag = -flag;
+    }
+    printf("%lf\n",sum);
     return 0;
 }
-
