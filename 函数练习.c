@@ -247,17 +247,39 @@ int teacher_Fib(int n)
 // }
 
 /*生成九九乘法表*/
+// int main()
+// {
+//     int i = 0;
+//     int j = 0;
+//     for(i=1;i<=9;i++)
+//     {
+//         for(j=1;j<=i;j++)
+//         {
+//             printf("%dx%d=%2d ",j,i,(i*j));//%2d——右对齐，不够填充空格    %-2d——左对齐，不够填充空格
+//         }
+//         printf("\n");
+//     }
+//     return 0;
+// }
+
+/*字符串逆序（递归实现）*/
+void reverse_string(char* str)
+{
+    char tmp = *str;//1
+    int len = my_strlen(str);
+    *str = *(str+len-1);//2
+    *(str+len-1) = '\0';//3
+    if(my_strlen(str+1)>=2)//判断条件
+    {
+        reverse_string(str+1);//4
+    }
+    *(str+len-1) =  tmp;//5
+}
+
 int main()
 {
-    int i = 0;
-    int j = 0;
-    for(i=1;i<=9;i++)
-    {
-        for(j=1;j<=i;j++)
-        {
-            printf("%dx%d=%2d ",j,i,(i*j));//%2d——右对齐，不够填充空格    %-2d——左对齐，不够填充空格
-        }
-        printf("\n");
-    }
+    char arr[]="abcdef";
+    reverse_string(arr);//传入数组首元素地址
+    printf("%s",arr);
     return 0;
 }
