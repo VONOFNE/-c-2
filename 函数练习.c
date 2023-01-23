@@ -230,18 +230,34 @@ int teacher_Fib(int n)
 // }
 
 /*求十个整数中的是最大值*/
+// int main()
+// {
+//     int arr[10] = { -1,-2,-3,-4,-5,-6,-7,-8,-9,-10};
+//     int max = arr[0];
+//     int i = 0;
+//     for(i=1;i<10;i++)
+//     {
+//         if(arr[i]>max)
+//         {
+//             max = arr[i];
+//         }
+//     }
+//     printf("%d",max);
+//     return 0;
+// }
+
+/*生成九九乘法表*/
 int main()
 {
-    int arr[10] = { -1,-2,-3,-4,-5,-6,-7,-8,-9,-10};
-    int max = arr[0];
     int i = 0;
-    for(i=1;i<10;i++)
+    int j = 0;
+    for(i=1;i<=9;i++)
     {
-        if(arr[i]>max)
+        for(j=1;j<=i;j++)
         {
-            max = arr[i];
+            printf("%dx%d=%2d ",j,i,(i*j));//%2d——右对齐，不够填充空格    %-2d——左对齐，不够填充空格
         }
+        printf("\n");
     }
-    printf("%d",max);
     return 0;
 }
