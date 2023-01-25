@@ -263,23 +263,38 @@ int teacher_Fib(int n)
 // }
 
 /*字符串逆序（递归实现）*/
-void reverse_string(char* str)
+// void reverse_string(char* str)
+// {
+//     char tmp = *str;//1
+//     int len = my_strlen(str);
+//     *str = *(str+len-1);//2
+//     *(str+len-1) = '\0';//3
+//     if(my_strlen(str+1)>=2)//判断条件
+//     {
+//         reverse_string(str+1);//4
+//     }
+//     *(str+len-1) =  tmp;//5
+// }
+
+// int main()
+// {
+//     char arr[]="abcdef";
+//     reverse_string(arr);//传入数组首元素地址
+//     printf("%s",arr);
+//     return 0;
+// }
+
+/*计算非负整数每位上的数字之和（递归实现）*/
+int Digitsum(int n)
 {
-    char tmp = *str;//1
-    int len = my_strlen(str);
-    *str = *(str+len-1);//2
-    *(str+len-1) = '\0';//3
-    if(my_strlen(str+1)>=2)//判断条件
-    {
-        reverse_string(str+1);//4
-    }
-    *(str+len-1) =  tmp;//5
+    int i = n % 10;
+    if(n >= 10)
+    return i + Digitsum(n/10);
 }
 
 int main()
 {
-    char arr[]="abcdef";
-    reverse_string(arr);//传入数组首元素地址
-    printf("%s",arr);
+    int num = 1729;
+    printf("%d",Digitsum(num));
     return 0;
 }
