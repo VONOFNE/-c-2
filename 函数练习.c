@@ -285,16 +285,44 @@ int teacher_Fib(int n)
 // }
 
 /*计算非负整数每位上的数字之和（递归实现）*/
-int Digitsum(int n)
+// int Digitsum(int n)
+// {
+//     int i = n % 10;
+//     if(n >= 10)
+//     return i + Digitsum(n/10);
+//     else
+//     return n;
+// }
+
+// int main()
+// {
+//     int num = 1729;
+//     printf("%d",Digitsum(num));
+//     return 0;
+// }
+
+/*计算n的k次方（递归）*/
+double Pow(int n,int k)
 {
-    int i = n % 10;
-    if(n >= 10)
-    return i + Digitsum(n/10);
+    if(k>0)
+    {
+        return n * Pow(n,k-1);
+    }
+    else if (k == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return 1.0/(Pow(n,-k));
+    }
 }
 
 int main()
 {
-    int num = 1729;
-    printf("%d",Digitsum(num));
+    int n = 0;
+    int k = 0;
+    scanf("%d %d",&n,&k);
+    printf("%f",Pow(n,k));
     return 0;
 }
