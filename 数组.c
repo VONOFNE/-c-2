@@ -29,17 +29,23 @@ void bubble_sort1(int* arr,int n)
 void bubble_sort2(int arr[],int n)
 {
     int i = 0;
+    int flag = 1;
     for(i=0;i<n-1;i++)
     {
         int j = 0;
-        for(j=0;j<n-1;j++)
+        for(j=0;j<n-1-i;j++)
         {
             if(arr[j]>arr[j+1])
             {
                 int tmp1 = arr[j+1];
                 arr[j+1] = arr[j];
                 arr[j] = tmp1;
+                flag = 0;
             }
+        }
+        if(flag == 1)
+        {
+            break;//优化：如果已经有序，避免了重复的操作
         }
     }
 }
